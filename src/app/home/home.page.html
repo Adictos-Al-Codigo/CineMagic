@@ -1,3 +1,4 @@
+<br>
 <app-header [name]="'Cine Magic'"></app-header>
 
 <ion-content [fullscreen]="true">
@@ -7,9 +8,74 @@
   <app-carrosuel></app-carrosuel>
 
   <ion-grid>
+    <ion-row class="categorias">
+      <ion-col>
+        <ion-label color="primary">Categorias</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label color="primary">Mostrar Todo</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+  <ion-grid>
+          <!-- Categorias -->
+      <ion-row class="elementos-categorias">
+        <ion-col>
+          <ion-chip>
+            <ion-avatar>
+              <img alt="Acción" src="../../assets/categorias/accion.png" />
+            </ion-avatar>
+            <ion-label>Acción</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col>
+          <ion-chip>
+            <ion-avatar>
+              <img alt="Comedía" src="../../assets/categorias/comedia.png" />
+            </ion-avatar>
+            <ion-label>Comedía</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col>
+          <ion-chip>
+            <ion-avatar>
+              <img alt="Animación" src="../../assets/categorias/animación.png" />
+            </ion-avatar>
+            <ion-label>Animación</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col>
+          <ion-chip>
+            <ion-avatar class="ciencia-ficcion">
+              <img alt="Ciencia ficción" src="../../assets/categorias/fantasia.jpg" />
+            </ion-avatar>
+            <ion-label>Fantasía</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col>
+          <ion-chip>
+            <ion-avatar>
+              <img alt="Terror" src="../../assets/categorias/terror.png" />
+            </ion-avatar>
+            <ion-label>Terror</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col>
+          <ion-chip>
+            <ion-avatar>
+              <img alt="Aventura" src="../../assets/categorias/aventura.png" />
+            </ion-avatar>
+            <ion-label>Aventura</ion-label>
+          </ion-chip>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <ion-grid>
 
     <!-- Fila 1 -->
-    <ion-row>
+    <ion-row class="fila1">
       <ion-col>
         <ion-card>
 
@@ -58,7 +124,7 @@
 
     <!-- Fila 2 -->
 
-    <ion-row>
+    <ion-row class="fila2">
       <ion-col>
         <ion-card>
 
@@ -107,7 +173,7 @@
 
     <!-- Fila 3 -->
 
-    <ion-row>
+    <ion-row class="fila3">
       <ion-col>
         <ion-card>
 
