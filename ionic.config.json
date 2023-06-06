@@ -1,0 +1,7 @@
+{
+  "name": "prueba5-consumo_api",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
