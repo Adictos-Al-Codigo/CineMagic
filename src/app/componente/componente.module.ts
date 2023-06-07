@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CarrosuelComponent } from './carrosuel/carrosuel.component';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [CarrosuelComponent, HeaderComponent],
-  exports: [CarrosuelComponent, HeaderComponent],
+  declarations: [CarrosuelComponent, HeaderComponent, FooterComponent],
+  exports: [CarrosuelComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule, IonicModule
   ]
