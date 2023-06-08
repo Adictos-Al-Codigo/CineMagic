@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThemoviesdbService } from '../servicios/themoviesdb.service';
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -11,6 +12,7 @@ export class HomePage implements OnInit {
 
   constructor(private themoviesdbService:ThemoviesdbService) {}
 
+  isModalOpen = false;
   public carteleras:any;
 
   ngOnInit(): void {
@@ -27,4 +29,13 @@ export class HomePage implements OnInit {
       }
     })
   }
+
+  GetMoviesDetails(idPelicula:number){
+    console.log(idPelicula);
+  }
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
 }
