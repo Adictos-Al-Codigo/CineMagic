@@ -77,9 +77,8 @@
   <!-- Peliculas -->
   <ion-grid>
 
-    <!-- Fila 1 -->
-    <ion-row class="fila1" *ngFor="let item of carteleras.results">
-      <ion-col size="6">
+    <ion-row class="fila1" >
+      <ion-col *ngFor="let item of carteleras.results" size="6">
         <ion-card>
 
           <ion-fab >
