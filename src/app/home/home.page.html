@@ -78,8 +78,8 @@
   <ion-grid>
 
     <!-- Fila 1 -->
-    <ion-row class="fila1">
-      <ion-col>
+    <ion-row class="fila1" *ngFor="let item of carteleras.results">
+      <ion-col size="6">
         <ion-card>
 
           <ion-fab >
@@ -87,143 +87,23 @@
               <ion-icon name="heart-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
-          <img class="img-card" alt="Super Mario Bros" src="../../assets/img/movie001.jpg" />
+          <img class="img-card" alt="Super Mario Bros" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
           
           <ion-card-header>
-            <ion-card-subtitle>Votacion: 95%</ion-card-subtitle>
-            <ion-card-title>Super Mario Bros</ion-card-title>
+            <!-- <ion-card-subtitle>Votacion: 95%</ion-card-subtitle>
+            <ion-card-title>Super Mario Bros</ion-card-title> -->
           </ion-card-header>
         
           <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
+            <!-- <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
             <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 05/Abril/2023</span>
+            <span class="content_date "> 05/Abril/2023</span> -->
           </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-
-          <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-          <img class="img-card" alt="Silhouette of mountains" src="../../assets/img/movie002.jpg" />
-          
-          <ion-card-header>
-            <ion-card-subtitle>Votacion: 99%</ion-card-subtitle>
-            <ion-card-title>Deadpool 2</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
-            <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 18/Mayo/2018</span>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-    </ion-row>
-
-    <!-- Fila 2 -->
-
-    <ion-row class="fila2">
-      <ion-col>
-        <ion-card>
-
-          <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-          <img class="img-card" alt="Silhouette of mountains" src="../../assets/img/img003.jpg" />
-          
-          <ion-card-header>
-            <ion-card-subtitle>Votacion: 73%</ion-card-subtitle>
-            <ion-card-title>Transformers </ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
-            <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 20/Junio/2017</span>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-
-          <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-          <img class="img-card" alt="Silhouette of mountains" src="../../assets/img/img004.jpg" />
-          
-          <ion-card-header>
-            <ion-card-subtitle>Votacion: 87%</ion-card-subtitle>
-            <ion-card-title>El Planeta de los Simios</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
-            <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 27/Marzo/1998</span>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-    </ion-row>
-
-    <!-- Fila 3 -->
-
-    <ion-row class="fila3">
-      <ion-col>
-        <ion-card>
-
-          <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-          <img class="img-card" alt="Silhouette of mountains" src="../../assets/img/img005.jpg" />
-          
-          <ion-card-header>
-            <ion-card-subtitle>Votacion: 95%</ion-card-subtitle>
-            <ion-card-title>Guardianes de la Galaxia</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
-            <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 05/Mayo/2023</span>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-
-          <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
-            </ion-fab-button>
-          </ion-fab>
-          <img class="img-card" alt="Silhouette of mountains" src="../../assets/img/img006.jpg" />
-          
-          <ion-card-header>
-            <ion-card-subtitle>Votacion: 70%</ion-card-subtitle>
-            <ion-card-title>La Historia de una Abeja</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
-            <span> Fecha de Creación</span> <br>
-            <span class="content_date "> 02/Nov/2007</span>
-          </ion-card-content>
-        </ion-card> 
       </ion-col>
     </ion-row>
   </ion-grid>
 
 </ion-content>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

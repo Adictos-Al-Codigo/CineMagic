@@ -21,7 +21,6 @@ export class CarrosuelComponent  implements OnInit {
     this.themoviesdbService.GetPhotosReleases().subscribe({
       next: (s)=>{
         this.url_fotos = s;
-        console.log(this.url_fotos);
       },
       error: (err) =>{
         debugger;
