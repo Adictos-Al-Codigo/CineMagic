@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
 
   isModalOpen = false;
   public carteleras:any;
+  public detallePelicula:any;
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -30,8 +31,16 @@ export class HomePage implements OnInit {
     })
   }
 
-  GetMoviesDetails(idPelicula:number){
-    console.log(idPelicula);
+  GetMoviesDetails(idPelicula:string){
+    this.themoviesdbService.GetMoviesDetails(idPelicula).subscribe({
+      next: (s) =>{
+        this.detallePelicula = s;
+        
+      },
+      error: (err) =>{
+        debugger;
+      }
+    })
   }
 
   setOpen(isOpen: boolean) {

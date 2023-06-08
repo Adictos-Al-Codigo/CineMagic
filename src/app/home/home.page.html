@@ -110,18 +110,24 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Modal</ion-title>
+          <ion-title>Detalle de la Pelicula</ion-title>
           <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Close</ion-button>
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni illum quidem recusandae ducimus quos
-          reprehenderit. Veniam, molestias quos, dolorum consequuntur nisi deserunt omnis id illo sit cum qui. Eaque,
-          dicta.
-        </p>
+        <div>
+          <h2>{{detallePelicula.title}}</h2>
+          <ion-img src="https://image.tmdb.org/t/p/original/{{detallePelicula.poster_path}}"></ion-img>
+          <p>
+            {{detallePelicula.overview}}
+          </p>
+          <ion-label class="ion-text-center">Lenguajes</ion-label> <br>
+          <ion-badge color="tertiary" *ngFor="let item of detallePelicula.spoken_languages">{{item.name}}</ion-badge> <br>
+          <ion-label class="ion-text-center">Generos</ion-label> <br>
+          <ion-badge color="danger" *ngFor="let item of detallePelicula.genres">{{item.name}}</ion-badge>
+        </div>
       </ion-content>
     </ng-template>
   </ion-modal>
