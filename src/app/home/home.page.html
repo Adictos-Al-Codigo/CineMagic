@@ -82,8 +82,8 @@
         <ion-card>
 
           <ion-fab >
-            <ion-fab-button color="danger" class="ion fab">
-              <ion-icon name="heart-outline"></ion-icon>
+            <ion-fab-button color="success" class="ion fab">
+              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" name="add-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
           <img class="img-card" alt="Super Mario Bros" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
@@ -98,7 +98,7 @@
             <span> Fecha de Creación</span> <br>
             <span class="content_date ">{{item.release_date}}</span>
 
-            <ion-badge expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" color="secondary">Ver Más</ion-badge>
+            <!-- <ion-badge expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" color="secondary">Ver Más</ion-badge> -->
           </ion-card-content>
           
         </ion-card>
@@ -118,15 +118,14 @@
       </ion-header>
       <ion-content class="ion-padding">
         <div>
-          <h2>{{detallePelicula.title}}</h2>
-          <img src="https://image.tmdb.org/t/p/original/{{detallePelicula.poster_path}}">
-          <p>
-            {{detallePelicula.overview}}
-          </p>
-          <ion-label class="ion-text-center">Lenguajes</ion-label> <br>
+          <ion-label class="text-title" color="success">{{detallePelicula.title}}</ion-label>
+          <img class="details-img" src="https://image.tmdb.org/t/p/original/{{detallePelicula.poster_path}}">
+          <ion-label class="text-sipnosis">Sipnosis</ion-label> <br>
+          <ion-note color="primary">{{detallePelicula.overview}}</ion-note> <br>
+          <ion-label class="text-lenguajes">Lenguajes</ion-label> <br><br>
           <ion-badge color="tertiary" *ngFor="let item of detallePelicula.spoken_languages">{{item.name}}</ion-badge> <br>
-          <ion-label class="ion-text-center">Generos</ion-label> <br>
-          <ion-badge color="danger" *ngFor="let item of detallePelicula.genres">{{item.name}}</ion-badge>
+          <ion-label class="text-generos">Generos</ion-label> <br><br>
+          <ion-badge  color="danger" *ngFor="let item of detallePelicula.genres">{{item.name}}</ion-badge>
         </div>
       </ion-content>
     </ng-template>

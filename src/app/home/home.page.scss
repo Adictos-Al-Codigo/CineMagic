@@ -69,5 +69,41 @@ ion-chip:active{
 }
 
 .details-img{
-  height: 500px;
+  margin-left: 7px;
+}
+
+.text-sipnosis{
+  position: relative;
+  left: 145px;
+  top: 3px;
+  font-weight: 900;
+}
+
+.text-lenguajes{
+  position: relative;
+  left: 145px;
+  font-weight: 900;
+  top: 8px;
+}
+
+.text-generos{
+  position: relative;
+  left: 145px;
+  font-weight: 900;
+  top: 8px;
+}
+
+.text-title{
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.separador{
+  background-color: #000;
+  height: 2px;
+  width: max-content;
+}
+
+ion-badge{
+  margin-left: 4px;
 }
