@@ -15,9 +15,11 @@ export class HomePage implements OnInit {
   isModalOpen = false;
   public carteleras:any;
   public detallePelicula:any;
+  public generos:any;
 
   ngOnInit(): void {
     this.GetAllBillboards();
+    this.ObtainAllGenres();
   }
 
   GetAllBillboards(){
@@ -47,4 +49,14 @@ export class HomePage implements OnInit {
     this.isModalOpen = isOpen;
   }
 
+  ObtainAllGenres(){
+    this.themoviesdbService.ObtainAllGenres().subscribe({
+      next: (s) =>{
+        this.generos = s;
+      },
+      error: (err) =>{
+        debugger;
+      }
+    })
+  }
 }

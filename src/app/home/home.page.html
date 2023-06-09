@@ -23,53 +23,8 @@
     <!-- Categorias -->
   <ion-grid>
       <ion-row class="elementos-categorias">
-        <ion-col>
-          <ion-chip>
-            <ion-avatar>
-              <img alt="Acción" src="../../assets/categorias/accion.png" />
-            </ion-avatar>
-            <ion-label>Acción</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col>
-          <ion-chip>
-            <ion-avatar>
-              <img alt="Comedía" src="../../assets/categorias/comedia.png" />
-            </ion-avatar>
-            <ion-label>Comedía</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col>
-          <ion-chip>
-            <ion-avatar class="animacion">
-              <img alt="Animación" src="../../assets/categorias/animación.png" />
-            </ion-avatar>
-            <ion-label>Animación</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col>
-          <ion-chip>
-            <ion-avatar class="ciencia-ficcion">
-              <img alt="Ciencia ficción" src="../../assets/categorias/fantasia.jpg" />
-            </ion-avatar>
-            <ion-label>Fantasía</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col>
-          <ion-chip>
-            <ion-avatar>
-              <img alt="Terror" src="../../assets/categorias/terror.png" />
-            </ion-avatar>
-            <ion-label>Terror</ion-label>
-          </ion-chip>
-        </ion-col>
-        <ion-col>
-          <ion-chip>
-            <ion-avatar>
-              <img alt="Aventura" src="../../assets/categorias/aventura.png" />
-            </ion-avatar>
-            <ion-label>Aventura</ion-label>
-          </ion-chip>
+        <ion-col size="4" *ngFor="let item of generos.genres">
+          <ion-badge class="badge-generos" color="warning">{{item.name}}</ion-badge>
         </ion-col>
       </ion-row>
   </ion-grid>

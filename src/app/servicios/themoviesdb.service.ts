@@ -26,4 +26,8 @@ export class ThemoviesdbService {
     return this.httpClientModule.get(this.api_url + "movie/" + idPelicula + "?api_key=435a680aac6331beaf591ad78cfc73f9&language=es-ES");
   }
 
+  ObtainAllGenres(){
+    return this.httpClientModule.get(this.api_url + "genre/movie/list?api_key=435a680aac6331beaf591ad78cfc73f9");
+  }
+
 }
