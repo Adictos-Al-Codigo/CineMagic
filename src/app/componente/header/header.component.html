@@ -1,7 +1,21 @@
 <ion-header>
-   <ion-icon class="icono-menu"  name="reorder-three-outline"></ion-icon>
-    <ion-title>
+  <ion-menu-toggle>
+    <ion-icon  class="icono-menu"  name="reorder-three-outline"></ion-icon> 
+  </ion-menu-toggle>
+  <ion-title>
       {{name}}
     </ion-title>
   <ion-icon class="logo" name="film-outline"></ion-icon>
 </ion-header>
+
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="title-menu">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <a routerLink="/"><ion-icon name="home-outline"></ion-icon>Principal</a> <br>
+    <a href="/sobre-mi">sobre mi</a>
+  </ion-content>
+</ion-menu>

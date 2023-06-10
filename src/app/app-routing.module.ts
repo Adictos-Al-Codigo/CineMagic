@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'sobre-mi',
+    loadChildren: () => import('./pages/sobre-mi/sobre-mi.module').then( m => m.SobreMiPageModule)
+  },
 ];
 
 @NgModule({
