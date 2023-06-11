@@ -17,6 +17,7 @@ export class HomePage implements OnInit {
   public carteleras:any;
   public detallePelicula:any;
   public generos:any;
+  public fotos:any;
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -54,6 +55,17 @@ export class HomePage implements OnInit {
     this.themoviesdbService.ObtainAllGenres().subscribe({
       next: (s) =>{
         this.generos = s;
+      },
+      error: (err) =>{
+        debugger;
+      }
+    })
+  }
+
+  GetFilmPhotos(idPelicula:string){
+    this.themoviesdbService.GetFilmPhotos(idPelicula).subscribe({
+      next: (s) =>{
+        this.fotos = s;
       },
       error: (err) =>{
         debugger;

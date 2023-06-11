@@ -42,7 +42,7 @@
 
           <ion-fab >
             <ion-fab-button color="success" class="ion fab">
-              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" name="add-outline"></ion-icon>
+              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
           <img class="img-card" alt="Super Mario Bros" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
@@ -81,6 +81,14 @@
           <img class="details-img" src="https://image.tmdb.org/t/p/original/{{detallePelicula.poster_path}}">
           <ion-label class="text-sipnosis">Sipnosis</ion-label> <br>
           <ion-note color="primary">{{detallePelicula.overview}}</ion-note> <br>
+          <ion-label class="text-fotogramas">Fotogramas</ion-label> <br>
+          <ion-grid>
+            <ion-row>
+              <ion-col *ngFor="let foto of fotos.backdrops" size="4">
+                <ion-img src="https://image.tmdb.org/t/p/original/{{foto.file_path}}"></ion-img>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
           <ion-label class="text-lenguajes">Lenguajes</ion-label> <br><br>
           <ion-badge color="tertiary" *ngFor="let item of detallePelicula.spoken_languages">{{item.name}}</ion-badge> <br>
           <ion-label class="text-generos">Generos</ion-label> <br><br>
