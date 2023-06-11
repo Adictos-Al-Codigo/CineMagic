@@ -8,10 +8,6 @@ const routes: Routes = [
     path: '',
     component: HomePage,
   },
-  {
-    path: 'sobre-mi',
-    component: SobreMiPage
-  }
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ export class HomePage implements OnInit {
 
   constructor(private themoviesdbService:ThemoviesdbService) {}
 
+
   isModalOpen = false;
   public carteleras:any;
   public detallePelicula:any;

@@ -15,11 +15,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <a id="open-loading2" href="/home"><ion-icon class="icon-home" name="home-outline"></ion-icon><ion-label>Principal</ion-label></a> <br>
-    <a id="open-loading" class="actived" href="/sobre-mi"><ion-icon class="icon-sobre_mi" name="person-outline"></ion-icon><ion-label >Desarrollador</ion-label></a>
+    <a (click)="showLoading('/home')" routerLink="/"><ion-icon class="icon-home" name="home-outline"></ion-icon><ion-label>Principal</ion-label></a> <br>
+    <a  class="actived" (click)="showLoading('/sobre-mi')"><ion-icon class="icon-sobre_mi" name="person-outline"></ion-icon><ion-label >Desarrollador</ion-label></a>
   </ion-content>
 </ion-menu>
-
-<ion-loading class="custom-loading" trigger="open-loading" message="Cargando..." [duration]="3000" spinner="circles"></ion-loading>
-
-<ion-loading class="custom-loading" trigger="open-loading2" message="Cargando..." [duration]="3000" spinner="bubbles"></ion-loading>

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
 
@@ -9,20 +10,21 @@ import { LoadingController } from '@ionic/angular';
 })
 export class HeaderComponent  implements OnInit {
 
+  
   @Input() public name!:string
-  constructor(private loadingCtrl:LoadingController) { }
+  constructor(private loadingCtrl:LoadingController, private router:Router) { }
 
   ngOnInit() {}
 
-  async showLoading() {
+  async showLoading(page:string) {
     const loading = await this.loadingCtrl.create({
       message: 'Cargando la Página...',
       duration: 3000,
     });
-
-    debugger;
-
+    
+    this.router.navigate([page]);
     loading.present();
+
   }
   
 
