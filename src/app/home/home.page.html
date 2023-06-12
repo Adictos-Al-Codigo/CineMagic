@@ -7,7 +7,7 @@
 
 
   <!-- Buscar -->
-  <ion-searchbar #valor (ionChange)="GetMovieByName(valor)" placeholder="Buscar la Película"></ion-searchbar>
+  <ion-searchbar #valor (ionChange)="GetMovieByName(valor,'resetear')" placeholder="Buscar la Película"></ion-searchbar>
 
   <!-- Carrousel -->
   <app-carrosuel></app-carrosuel>
@@ -94,7 +94,17 @@
         </ion-card>
       </ion-col>
     </ion-row>
+
+    <ion-row class="fila-botones">
+      <ion-col class="boton1" size="6">
+        <button [disabled]="numPag == 1" (click)="GetMovieByName(valor,'resta')" class="btn btn-danger">Anterior</button>
+      </ion-col>
+      <ion-col class="boton2" size="6">
+        <button [disabled]="numPag == peliculasEncontradas.total_pages" (click)="GetMovieByName(valor, 'suma')" class="btn btn-danger">Siguiente</button>
+      </ion-col>
+    </ion-row>
   </ion-grid>
+  
 
   <ion-modal [isOpen]="isModalOpen">
     <ng-template>

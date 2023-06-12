@@ -10,6 +10,7 @@ export class ThemoviesdbService {
   api_url:string = "https://api.themoviedb.org/3/";
 
   constructor(private httpClientModule:HttpClient) { }
+  
 
   // Obtener estrenos
   GetPhotosReleases(){
@@ -34,7 +35,7 @@ export class ThemoviesdbService {
     return this.httpClientModule.get(this.api_url + "movie/" + idPelicula + "/images?api_key=435a680aac6331beaf591ad78cfc73f9");
   }
 
-  GetMovieByName(nomPelicula:string){
-    return this.httpClientModule.get("https://api.themoviedb.org/3/search/movie?api_key=435a680aac6331beaf591ad78cfc73f9&language=es-ES&query=" + nomPelicula + "&page=1&include_adult=true");
+  GetMovieByName(nomPelicula:string, numPag:string){
+    return this.httpClientModule.get("https://api.themoviedb.org/3/search/movie?api_key=435a680aac6331beaf591ad78cfc73f9&language=es-ES&query=" + nomPelicula + "&page=" + numPag + "&include_adult=true");
   }
 }
