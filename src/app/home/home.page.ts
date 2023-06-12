@@ -18,6 +18,7 @@ export class HomePage implements OnInit {
   public detallePelicula:any;
   public generos:any;
   public fotos:any;
+  public peliculasEncontradas:any;
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -72,4 +73,17 @@ export class HomePage implements OnInit {
       }
     })
   }
+
+  GetMovieByName(object:any){
+    this.themoviesdbService.GetMovieByName(object.value).subscribe({
+      next: (s) =>{
+        this.peliculasEncontradas = s;
+      },
+      error: (err) =>{
+        debugger;
+      }
+    })
+  }
+
+  
 }

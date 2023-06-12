@@ -7,7 +7,7 @@
 
 
   <!-- Buscar -->
-  <ion-searchbar placeholder="Buscar la Película"></ion-searchbar>
+  <ion-searchbar #valor (ionChange)="GetMovieByName(valor)" placeholder="Buscar la Película"></ion-searchbar>
 
   <!-- Carrousel -->
   <app-carrosuel></app-carrosuel>
@@ -33,8 +33,8 @@
       </ion-row>
   </ion-grid>
 
-  <!-- Peliculas -->
-  <ion-grid>
+  <!-- Peliculas de Cartelera -->
+  <ion-grid *ngIf="!valor.value">
 
     <ion-row class="fila1" >
       <ion-col class="columna" *ngFor="let item of carteleras.results" size="6">
@@ -58,6 +58,37 @@
             <span class="content_date ">{{item.release_date}}</span>
 
             <!-- <ion-badge expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" color="secondary">Ver Más</ion-badge> -->
+          </ion-card-content>
+          
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Peliculas de Busqueda -->
+
+  <ion-grid *ngIf="valor.value">
+
+    <ion-row class="fila1" >
+      <ion-col class="columna" *ngFor="let item of peliculasEncontradas.results" size="6">
+        <ion-card>
+
+          <ion-fab >
+            <ion-fab-button color="success" class="ion fab">
+              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+          <img class="img-card" alt="{{item.title}}" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
+          
+          <ion-card-header>
+            <ion-card-subtitle>Votacion: {{item.vote_average}}/10</ion-card-subtitle>
+            <ion-card-title>{{item.title}}</ion-card-title> 
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-icon class="megaphone" name="megaphone-outline"></ion-icon>
+            <span> Fecha de Estreno</span> <br>
+            <span class="content_date ">{{item.release_date}}</span>
           </ion-card-content>
           
         </ion-card>
