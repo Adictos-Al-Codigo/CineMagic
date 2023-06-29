@@ -133,7 +133,26 @@
           <ion-badge color="tertiary" *ngFor="let item of detallePelicula.spoken_languages">{{item.name}}</ion-badge> <br>
           <ion-label class="text-generos">Generos</ion-label> <br><br>
           <ion-badge  color="danger" *ngFor="let item of detallePelicula.genres">{{item.name}}</ion-badge>
-          <ion-button  color="tertiary">Agregar Comentario</ion-button>
+          <br>
+          <!-- Agregar un Comentario -->
+          <ion-fab class="comentario">
+            <ion-fab-button>
+              <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="end">
+              <ion-fab-button (click)="toggleComentario()">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+          <!-- Text Area y Botón de Comentario -->
+          <br><br><br>
+          <div *ngIf="mostrarComentario">
+            <ion-textarea label="Comentario" labelPlacement="floating" fill="outline" placeholder="Ingresar un Comentario"></ion-textarea>
+            <ion-button color="tertiary">Enviar</ion-button>
+          </div>
+          <!-- Lista de Comentarios -->
+          
         </div>
       </ion-content>
     </ng-template>

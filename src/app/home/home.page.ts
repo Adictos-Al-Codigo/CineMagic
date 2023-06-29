@@ -20,6 +20,7 @@ export class HomePage implements OnInit {
   public fotos:any;
   public peliculasEncontradas:any;
   public numPag:number =0;
+  public mostrarComentario:boolean = false;
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -94,6 +95,10 @@ export class HomePage implements OnInit {
         console.log(err);
       }
     })
+  }
+
+  toggleComentario() {
+    this.mostrarComentario = !this.mostrarComentario;
   }
   
 }
