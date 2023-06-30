@@ -56,4 +56,13 @@ export class ThemoviesdbService {
     let api_url = "http://127.0.0.1:3000/api/user";
     return this.httpClientModule.post<RegistrarI>(api_url,_Form);
   }
+
+  // Apis creadas de Comentario
+
+  // Obtener todos los comentarios
+
+  GetAllComments(){
+    let api_url = "http://127.0.0.1:3000/api/comment";
+    return this.httpClientModule.get(api_url);
+  }
 }

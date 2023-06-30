@@ -21,6 +21,7 @@ export class HomePage implements OnInit {
   public peliculasEncontradas:any;
   public numPag:number =0;
   public mostrarComentario:boolean = false;
+  public lista_comentarios:any;
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -42,7 +43,8 @@ export class HomePage implements OnInit {
     this.themoviesdbService.GetMoviesDetails(idPelicula).subscribe({
       next: (s) =>{
         this.detallePelicula = s;
-        
+        this.getAllComment();
+        console.log(s);
       },
       error: (err) =>{
         debugger;
@@ -99,6 +101,20 @@ export class HomePage implements OnInit {
 
   toggleComentario() {
     this.mostrarComentario = !this.mostrarComentario;
+  }
+
+  // Consumiendo la Api de Comentario
+
+  getAllComment(){
+    this.themoviesdbService.GetAllComments().subscribe({
+      next: (s) =>{
+        this.lista_comentarios = s;
+        console.log(s);
+      },
+      error: (err) =>{
+        console.error(err);
+      }
+    });
   }
   
 }

@@ -18,6 +18,13 @@ export class LoginPage implements OnInit {
   constructor(private router:Router, private themoviesdbService:ThemoviesdbService) { }
 
   ngOnInit() {
+    this.checkLocalStorage();
+  }
+
+  checkLocalStorage(){
+    if (localStorage.getItem("token")) {
+     this.router.navigate(['home']);
+    }
   }
 
   Login(Form:any){
