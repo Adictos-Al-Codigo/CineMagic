@@ -1,6 +1,7 @@
+import { LoginI } from './../modelo/login.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,14 @@ export class ThemoviesdbService {
 
   GetMovieByName(nomPelicula:string, numPag:string){
     return this.httpClientModule.get("https://api.themoviedb.org/3/search/movie?api_key=435a680aac6331beaf591ad78cfc73f9&language=es-ES&query=" + nomPelicula + "&page=" + numPag + "&include_adult=true");
+  }
+
+  // Apis creadas 
+
+  // Login
+
+  Login(form:LoginI):Observable<LoginI>{
+    let api_url = "http://127.0.0.1:3000/api/login";
+    return this.httpClientModule.post<LoginI>(api_url,form);
   }
 }
