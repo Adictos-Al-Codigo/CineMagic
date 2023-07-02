@@ -57,7 +57,6 @@ export class HomePage implements OnInit {
         this.getAllComment();
         this.id_pelicula = idPelicula;
         this.nombre_pelicula = title;
-        console.log(s);
       },
       error: (err) =>{
         debugger;
@@ -122,7 +121,6 @@ export class HomePage implements OnInit {
     this.themoviesdbService.GetAllComments().subscribe({
       next: (s) =>{
         this.lista_comentarios = s;
-        console.log(s);
       },
       error: (err) =>{
         console.error(err);
