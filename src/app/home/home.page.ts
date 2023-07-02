@@ -132,8 +132,8 @@ export class HomePage implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Aviso',
-      message: 'Mensaje Registrado Correctamente',
+      header: '🌟 Aviso 🌟 ',
+      message: 'Mensaje Registrado Correctamente. ✅',
       buttons: ['Aceptar'],
     });
 
