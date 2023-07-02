@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemoviesdbService } from '../servicios/themoviesdb.service';
-
+import { FormGroup,FormControl, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { ThemoviesdbService } from '../servicios/themoviesdb.service';
 })
 export class HomePage implements OnInit {
 
-  constructor(private themoviesdbService:ThemoviesdbService) {}
+  constructor(private themoviesdbService:ThemoviesdbService, private alertController:AlertController, private router:Router) {}
 
 
   isModalOpen = false;
@@ -22,6 +24,15 @@ export class HomePage implements OnInit {
   public numPag:number =0;
   public mostrarComentario:boolean = false;
   public lista_comentarios:any;
+  public id_pelicula!:string;
+  public nombre_pelicula!:string;
+
+  public MensajeForm = new FormGroup({
+    comentario : new FormControl("",Validators.required),
+    id_pelicula : new FormControl(""),
+    nombre_pelicula : new FormControl(""),
+    users_id : new FormControl("")
+  });
 
   ngOnInit(): void {
     this.GetAllBillboards();
@@ -39,11 +50,13 @@ export class HomePage implements OnInit {
     })
   }
 
-  GetMoviesDetails(idPelicula:string){
+  GetMoviesDetails(idPelicula:string, title:string){
     this.themoviesdbService.GetMoviesDetails(idPelicula).subscribe({
       next: (s) =>{
         this.detallePelicula = s;
         this.getAllComment();
+        this.id_pelicula = idPelicula;
+        this.nombre_pelicula = title;
         console.log(s);
       },
       error: (err) =>{
@@ -115,6 +128,35 @@ export class HomePage implements OnInit {
         console.error(err);
       }
     });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Aviso',
+      message: 'Mensaje Registrado Correctamente',
+      buttons: ['Aceptar'],
+    });
+
+    await alert.present();
+  }
+  
+
+  CreateComment(MensajeForm:any){
+    this.MensajeForm.setValue({
+      id_pelicula: this.id_pelicula,
+      comentario: MensajeForm,
+      nombre_pelicula: this.nombre_pelicula,
+      users_id : localStorage.getItem("id_user")
+    });
+    this.themoviesdbService.CreateComment(this.MensajeForm.value).subscribe({
+      next: (s) =>{
+        this.presentAlert();
+        this.isModalOpen=false;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
   
 }

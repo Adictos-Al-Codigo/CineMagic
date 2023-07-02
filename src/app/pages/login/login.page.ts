@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
     this.themoviesdbService.Login(Form).subscribe({
       next:(s) =>{        
         localStorage.setItem("token",s.token);
+        localStorage.setItem("id_user",s.dataUser.id);
         this.router.navigate(['home']);
       },
       error:(err) =>{

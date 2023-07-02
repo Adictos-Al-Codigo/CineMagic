@@ -43,7 +43,7 @@
           <!-- Icono para mostrar el detalle de la pelicula  -->
           <ion-fab >
             <ion-fab-button color="success" class="ion fab">
-              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
+              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id,item.title)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
           <img class="img-card" alt="Super Mario Bros" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
@@ -74,7 +74,7 @@
           <!-- Icono para mostrar el detalle de la pelicula  -->
           <ion-fab >
             <ion-fab-button color="success" class="ion fab">
-              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
+              <ion-icon expand="block" (click)="setOpen(true)" (click)="GetMoviesDetails(item.id, item.title)" (click)="GetFilmPhotos(item.id)" name="add-outline"></ion-icon>
             </ion-fab-button>
           </ion-fab>
           <img class="img-card" alt="{{item.title}}" src="https://image.tmdb.org/t/p/original/{{item.poster_path}}" />
@@ -148,26 +148,29 @@
           <!-- Text Area y Botón de Comentario -->
           <br><br><br>
           <div *ngIf="mostrarComentario">
-            <ion-textarea label="Comentario" labelPlacement="floating" fill="outline" placeholder="Ingresar un Comentario"></ion-textarea>
-            <ion-button color="tertiary">Enviar</ion-button>
+            <form  (ngSubmit)="CreateComment(mensaje.value)">
+              <ion-textarea #mensaje label="Comentario" labelPlacement="floating" fill="outline" placeholder="Ingresar un Comentario"></ion-textarea>
+              <button class="btn btn-primary">Enviar</button>
+            </form>
           </div>
           <!-- Lista de Comentarios -->
           <ion-grid>
             <ion-row *ngFor="let item of lista_comentarios">
               <ion-col size="4">
-                <ion-label style="font-weight: 700;">{{item.user.user}}</ion-label>
+                <ion-label class="text-user" style="font-weight: 700;">{{item.user.user}}</ion-label>
                 <ion-avatar>
                   <img class="img-avatar" alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
                 </ion-avatar>
               </ion-col>
               <ion-col size="8">
-                <ion-label style="font-weight: 900;">{{item.id_pelicula}}</ion-label> <br>
+                <ion-label style="font-weight: 900;">{{item.nombre_pelicula}}</ion-label> <br>
                 <ion-text>
                   {{item.comentario}}
                 </ion-text>
               </ion-col>
             </ion-row>
           </ion-grid>
+
         </div>
       </ion-content>
     </ng-template>
