@@ -163,7 +163,7 @@
                 </ion-avatar>
               </ion-col>
               <ion-col size="8">
-                <ion-label style="font-weight: 900;"><ion-label color="tertiary" class="pelicula">Pelicula • </ion-label>{{item.nombre_pelicula}}</ion-label> <br>  <ion-label class="fecha_pelicula" color="danger">02/07/2023</ion-label> <br>
+                <ion-label style="font-weight: 900;"><ion-label color="tertiary" class="pelicula">Pelicula • </ion-label>{{item.nombre_pelicula}}</ion-label> <br>  <ion-label class="fecha_pelicula" color="danger">{{ item.fecha | slice:0:10 }}</ion-label> <br>
                 <ion-text>
                   {{item.comentario}}
                 </ion-text>
