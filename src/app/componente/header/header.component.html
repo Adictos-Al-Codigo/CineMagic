@@ -1,12 +1,23 @@
-<ion-header>
-  <ion-menu-toggle>
-    <ion-icon  class="icono-menu"  name="reorder-three-outline"></ion-icon> 
-  </ion-menu-toggle>
+<!-- <ion-header>
+
   <ion-title>
       {{name}}
     </ion-title>
   <ion-icon class="logo" name="film-outline"></ion-icon>
-</ion-header>
+</ion-header> -->
+
+<ion-toolbar>
+  <ion-buttons slot="secondary">
+    <ion-button>
+      <ion-icon  slot="icon-only" name="person-circle"></ion-icon>
+    </ion-button>
+    <ion-button>
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>{{name}}</ion-title>
+</ion-toolbar>
+
 
 <ion-menu contentId="main-content">
   <ion-header>
